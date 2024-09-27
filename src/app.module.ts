@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { DatabaseModule } from 'libs/common';
 import { UsersModule } from './users/users.module';
-
+import { DatabaseModule } from '@app/common';
 
 @Module({
   imports: [
