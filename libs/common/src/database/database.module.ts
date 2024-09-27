@@ -27,6 +27,9 @@ import * as usersSchema from "../../../../src/users/users.schema";
             },
             inject: [ConfigService]
         }
+    ],
+    exports: [
+        DATABASE_CONNECTION
     ]
 })
 
