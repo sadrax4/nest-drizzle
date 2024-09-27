@@ -14,4 +14,10 @@ export class UsersService {
     getUsers() {
         return this.database.query.user.findMany();
     }
+
+    createUser(
+        user: typeof schema.user.$inferInsert
+    ) {
+        return this.database.insert(schema.user).values(user);
+    }
 }
