@@ -4,5 +4,6 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: nest-drizzle
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: nestjs-drizzle
+      POSTGRES_USER: drizzle
