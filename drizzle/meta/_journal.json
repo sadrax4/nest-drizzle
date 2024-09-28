@@ -8,6 +8,13 @@
       "when": 1727460241953,
       "tag": "0000_yellow_leopardon",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1727549133703,
+      "tag": "0001_clever_shiver_man",
+      "breakpoints": true
     }
   ]
 }
