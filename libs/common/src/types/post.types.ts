@@ -2,6 +2,6 @@ export type Post = {
     id: number
     content: string
     published: boolean
-    timestamp: number
+    timestamp: Date
     userId: number
 }

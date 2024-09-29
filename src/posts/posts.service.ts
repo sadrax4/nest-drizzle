@@ -1,7 +1,8 @@
-import { DATABASE_CONNECTION } from '@app/common';
+import { DATABASE_CONNECTION, Post } from '@app/common';
 import { Inject, Injectable } from '@nestjs/common';
 import { NodePgDatabase } from 'drizzle-orm/node-postgres';
 import * as schema from "./posts.schema"
+import { PgRelationalQuery } from 'drizzle-orm/pg-core/query-builders/query';
 
 @Injectable()
 export class PostsService {
@@ -11,6 +12,6 @@ export class PostsService {
     ) { }
 
     getPosts() {
-        return this.database.query.posts.findMany({ extras: {} })
+        const posts: PgRelationalQuery<Post[]> = this.database.query.posts.findMany({ extras: {} })
     }
 }
