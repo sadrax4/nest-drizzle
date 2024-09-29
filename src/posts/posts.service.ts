@@ -11,7 +11,10 @@ export class PostsService {
         private database: NodePgDatabase<typeof schema>
     ) { }
 
-    getPosts() {
-        const posts: PgRelationalQuery<Post[]> = this.database.query.posts.findMany({ extras: {} })
+    getPosts(): Promise<Post[]> {
+        const posts: PgRelationalQuery<Post[]> = this.database.query.posts.findMany({
+            extras: {}
+        })
+        return posts;
     }
 }
