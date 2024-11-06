@@ -20,10 +20,9 @@ import * as postsSchema from "../../../../src/posts/posts.schema"
                     pool,
                     {
                         schema: {
-                            ...usersSchema,
-                            ...postsSchema
-                        },
-                        logger: true
+                            usersSchema,
+                            postsSchema
+                        }
                     }
                 )
             },

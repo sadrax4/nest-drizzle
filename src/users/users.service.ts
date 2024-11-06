@@ -17,6 +17,7 @@ export class UsersService {
         const users: PgRelationalQuery<User[]> = this.database.query.users.findMany({
             extras: {}
         })
+        this.database
         return users;
     }
 

@@ -10,25 +10,24 @@ import {
 import { users } from "src/users/users.schema";
 
 export const posts = pgTable(
-    "posts",
+    'posts',
     {
-        id: serial("id").primaryKey(),
-        content: text("content"),
-        published: boolean("published").default(false),
-        timestamp: timestamp("timestamp").defaultNow(),
-        userId: integer("user_id").references(() => users.id)
-    }
-)
+        id: serial('id').primaryKey(),
+        content: text('content'),
+        published: boolean('published').default(false),
+        timestamp: timestamp('timestamp').defaultNow(),
+        userId: integer('user_id').references(() => users.id),
+    });
 
-export const postsRelation = relations(
+export const postRelations = relations(
     posts,
     ({ one }) => ({
         user: one(
             users,
             {
                 fields: [posts.userId],
-                references: [users.id]
+                references: [users.id],
             }
-        )
+        ),
     })
-)
+);
