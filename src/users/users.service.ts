@@ -14,11 +14,13 @@ export class UsersService {
     ) { }
 
     getUsers(): Promise<User[]> {
-        const users: PgRelationalQuery<User[]> = this.database.query.users.findMany({
+        const user: PgRelationalQuery<User[]> = this.database.query.users.findMany({
             extras: {}
         })
-        this.database.query.users.findMany
-        return users;
+        this.database.select({
+            id: schema.users.id,
+        })
+        return user;
     }
 
     createUser(
